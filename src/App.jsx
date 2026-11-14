@@ -18,7 +18,7 @@ export default function App() {
   }
 
   const diceElements = dice.map((dieObject) => (
-    <Die key={dieObject.id} value={dieObject.value} />
+    <Die key={dieObject.id} value={dieObject.value} isHeld={dieObject.isHeld} />
   ));
 
   return (
