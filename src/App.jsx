@@ -34,6 +34,10 @@ export default function App() {
     );
   }
 
+  function restartGame() {
+    setDice(generateAllNewDice());
+  }
+
   const diceElements = dice.map((dieObject) => (
     <Die
       key={dieObject.id}
@@ -53,7 +57,7 @@ export default function App() {
         current value between rolls.
       </p>
       <div className="dice-container">{diceElements}</div>
-      <button className="roll-dice" onClick={rollDice}>
+      <button className="roll-dice" onClick={gameWon ? restartGame : rollDice}>
         {gameWon ? "New Game" : "Roll"}
       </button>
     </main>
